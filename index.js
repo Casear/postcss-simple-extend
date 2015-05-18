@@ -37,7 +37,6 @@ module.exports = postcss.plugin('postcss-simple-extend', function simpleExtend()
       // cf. https://github.com/postcss/postcss/issues/85
       definition.semicolon = atRule.semicolon;
       atRule.nodes.forEach(function(node) {
-        if (isBadDefinitionNode(node)) return;
         var clone = node.clone();
         clone.before = node.before;
         clone.after = node.after;
